@@ -1,0 +1,22 @@
+{% extends 'inicio.html' %}
+{% load humanize %}
+<center>
+{% block content %}
+
+{% for post in posts %}
+    <article>
+        <div class="container-article">
+            <img src="{{ post.user.profile.image.url }}">
+            <div>
+                <i class="clock"></i>
+                <time data-time="#">{{ post.timestamp|naturaltime }}</time>
+                <div class="post">{{ post.content }}</div>
+            </div>
+        </div>
+    </article>
+
+{% endfor %}
+
+{% endblock %}
+
+</center>
