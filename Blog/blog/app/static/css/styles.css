@@ -11297,11 +11297,11 @@ header.masthead .site-heading .h1 {
 }
 
 .username{
-	margin-bottom: 10rem;
+	margin-bottom: 10px;
 }
 
 .username a{
-	font-size: 0.6em;
+	font-size: 10px;
 }
 
 .post{
@@ -11336,4 +11336,15 @@ header.masthead .site-heading .h1 {
 .profile h2{
 	margin-top: -10px;
 	font-size: 1.3rem;
+}
+
+.container-article{
+  display: flex;
+}
+
+.container-article img{
+  height: 68px;
+  width: 68px;
+  margin-right: 10px;
+  border-radius: 50%;
 }
