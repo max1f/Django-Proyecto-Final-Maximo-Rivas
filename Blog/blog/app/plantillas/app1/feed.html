@@ -1,22 +1,23 @@
 {% extends 'inicio.html' %}
 {% load humanize %}
-<center>
 {% block content %}
 
+<h2>Posts Recientes</h2><br>
 {% for post in posts %}
-    <article>
-        <div class="container-article">
-            <img src="{{ post.user.profile.image.url }}">
-            <div>
-                <i class="clock"></i>
-                <time data-time="#">{{ post.timestamp|naturaltime }}</time>
-                <div class="post">{{ post.content }}</div>
-            </div>
+
+<article>
+    <div class="container-article">
+        <img src="/static/assets/img/home.jpg">
+        <div>
+            <h2>@{{ post.user.username }}</h2>
+            <i class="clock"></i>
+            <time data-time="#">{{ post.timestamp|naturaltime }}</time>
+            <div class="post">{{ post.content }}</div>
         </div>
-    </article>
+    </div>
+</article>
+<br>
 
 {% endfor %}
 
 {% endblock %}
-
-</center>
