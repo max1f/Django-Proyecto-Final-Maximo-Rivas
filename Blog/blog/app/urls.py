@@ -4,10 +4,11 @@ from app import views
 from .views import inicio,posts,about,contact,publicar,login_request,register,feed,profile
 from django.contrib.auth.views import LogoutView,LoginView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio, name='inicio'),
-    path('#!', views.inicio),
+    path('', views.feed, name='inicio'),
+    path('#!', views.feed),
     path('post', views.posts),
     path('about', views.about),
     path('contact', views.contact),
@@ -16,4 +17,5 @@ urlpatterns = [
     path('register', views.register, name= 'register'),
     path('logout', LogoutView.as_view(template_name='logout.html'), name= 'Logout'),
     path('profile/', views.profile, name='profile'),
-]   
+
+]  

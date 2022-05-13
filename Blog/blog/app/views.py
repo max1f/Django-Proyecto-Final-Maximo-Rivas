@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import *
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 # Create your views here.
@@ -90,8 +91,7 @@ def posts(request):
 def feed(request):
 	posts = post.objects.all()
 
-	context = { 'posts': posts}
-	return render(request, 'feed.html', context)
+	return render(request, 'feed.html', {'posts': posts})
 
 def profile(request, username=None):
 	current_user = request.user
@@ -101,4 +101,6 @@ def profile(request, username=None):
 	else:
 		posts = current_user.posts.all()
 		user = current_user
-	return render(request, 'profile.html', {'user':user, 'posts':posts})
+	return redirect(reverse('profile', args=[request.user.username]))
+
+
